@@ -54,8 +54,19 @@ app.use((err, req, res, next) => {
   });
 });
 
-// 404 handler
-app.use('*', (req, res) => {
+
+const path = require('path');
+
+// Serve static files from the frontend build
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
+
+// For any other non-API route, serve the frontend's index.html
+app.get(/^\/(?!api).*/, (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
+
+// 404 handler for API routes only
+app.use('/api/*', (req, res) => {
   res.status(404).json({ 
     success: false, 
     message: 'Route not found' 
@@ -79,3 +90,6 @@ server.listen(PORT, () => {
 });
 
 module.exports = app;
+
+
+
