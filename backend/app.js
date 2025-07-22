@@ -18,14 +18,24 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://8f88a4bec94f.ngrok-free.app',
-    'https://whatsappwebandbotfoodorderingsystem-production.up.railway.app'
-  ],
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:3001',
+      'https://8f88a4bec94f.ngrok-free.app',
+      'https://whatsappwebandbotfoodorderingsystem-production.up.railway.app'
+    ];
+
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
