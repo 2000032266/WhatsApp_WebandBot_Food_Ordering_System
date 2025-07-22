@@ -21,7 +21,8 @@ app.use(cors({
   origin: [
     'http://localhost:3000',
     'http://localhost:3001',
-    'https://8f88a4bec94f.ngrok-free.app'
+    'https://8f88a4bec94f.ngrok-free.app',
+    'https://whatsappwebandbotfoodorderingsystem-production.up.railway.app'
   ],
   credentials: true
 }));
