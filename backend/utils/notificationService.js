@@ -1,7 +1,7 @@
 const WhatsAppController = require('../controllers/whatsappController');
 const Order = require('../models/Order');
 const User = require('../models/User');
-const notificationServer = require('./notificationServer');
+// WebSocket notification server removed (not in use)
 
 /**
  * Utility function to notify customers about order status changes
@@ -66,17 +66,7 @@ async function notifyCustomerOrderStatusChanged(orderId, newStatus) {
       `💰 Total Amount: ₹${order.total}\n\n` +
       `Thank you for your order!`;
     
-    // Send notification via WebSocket if user is connected
-    notificationServer.sendToUser(customer.id, {
-      type: 'order_status_update',
-      orderId: orderId,
-      status: newStatus,
-      message: statusMessage,
-      emoji: statusEmoji,
-      restaurant: order.restaurant_name,
-      total: order.total,
-      timestamp: new Date().toISOString()
-    });
+    // WebSocket notification server removed (not in use)
     
     // Send notification via WhatsApp
     console.log(`📱 Sending order status notification to customer ${customer.phone} for order #${orderId}`);

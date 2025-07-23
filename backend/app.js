@@ -12,7 +12,7 @@ const customerRoutes = require('./routes/customerRoutes');
 const publicRoutes = require('./routes/publicRoutes');
 
 const notificationRoutes = require('./routes/notificationRoutes');
-const notificationServer = require('./utils/notificationServer');
+// WebSocket notification server removed (not in use)
 
 const app = express();
 
@@ -66,15 +66,14 @@ const PORT = process.env.PORT || 5001;
 // Create HTTP server
 const server = http.createServer(app);
 
-// Initialize WebSocket notification server
-notificationServer.initialize(server);
+// WebSocket notification server removed (not in use)
 
 // Start the server
 server.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
   console.log(`📱 WhatsApp webhook endpoint: http://localhost:${PORT}/api/whatsapp/webhook`);
   console.log(`🌐 API base URL: http://localhost:${PORT}/api`);
-  console.log(`🔔 Real-time notification server running on ws://localhost:${PORT}`);
+  // WebSocket notification server removed (not in use)
 });
 
 module.exports = app;
