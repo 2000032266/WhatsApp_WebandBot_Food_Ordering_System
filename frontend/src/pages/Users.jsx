@@ -61,7 +61,7 @@ const Users = () => {
           updateData.password = formData.password;
         }
         
-        response = await api.put(`/admin/users/${editingUser.id}`, updateData);
+        response = await api.put(`/api/admin/users/${editingUser.id}`, updateData);
         if (response.data.success) {
           toast.success('User updated successfully');
           setShowForm(false);
@@ -90,7 +90,7 @@ const Users = () => {
     }
 
     try {
-      const response = await api.delete(`/admin/users/${userId}`);
+      const response = await api.delete(`/api/admin/users/${userId}`);
       if (response.data.success) {
         toast.success('User deleted successfully');
         fetchUsers();
