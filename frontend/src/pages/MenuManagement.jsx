@@ -48,7 +48,7 @@ const MenuManagement = () => {
 
   const handleUpdateItem = async (itemData) => {
     try {
-      const response = await api.put(`/restaurant/menu/${editingItem.id}`, itemData);
+      const response = await api.put(`/api/restaurant/menu/${editingItem.id}`, itemData);
       if (response.data.success) {
         toast.success('Menu item updated successfully');
         setShowForm(false);
@@ -67,7 +67,7 @@ const MenuManagement = () => {
     }
 
     try {
-      const response = await api.delete(`/restaurant/menu/${itemId}`);
+      const response = await api.delete(`/api/restaurant/menu/${itemId}`);
       if (response.data.success) {
         toast.success('Menu item deleted successfully');
         fetchMenu();
