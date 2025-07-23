@@ -59,7 +59,7 @@ const Restaurants = () => {
 
     try {
       const response = editingRestaurant 
-        ? await api.put(`/admin/restaurants/${editingRestaurant.id}`, formData)
+        ? await api.put(`/api/admin/restaurants/${editingRestaurant.id}`, formData)
         : await api.post('/api/admin/restaurants', formData);
       
       if (response.data.success) {
@@ -80,7 +80,7 @@ const Restaurants = () => {
     }
 
     try {
-      const response = await api.delete(`/admin/restaurants/${restaurantId}`);
+      const response = await api.delete(`/api/admin/restaurants/${restaurantId}`);
       if (response.data.success) {
         toast.success('Restaurant deleted successfully');
         fetchRestaurants();
