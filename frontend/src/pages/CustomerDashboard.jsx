@@ -19,7 +19,7 @@ const CustomerDashboard = () => {
   const fetchCustomerData = async () => {
     try {
       // Fetch available restaurants
-      const restaurantsResponse = await api.get('/restaurants');
+      const restaurantsResponse = await api.get('/api/restaurants');
       if (restaurantsResponse.data.success) {
         setRestaurants(restaurantsResponse.data.data.restaurants || []);
       }
