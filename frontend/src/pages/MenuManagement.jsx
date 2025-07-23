@@ -80,7 +80,7 @@ const MenuManagement = () => {
 
   const handleToggleAvailability = async (itemId) => {
     try {
-      const response = await api.patch(`/restaurant/menu/${itemId}/toggle`);
+      const response = await api.patch(`/api/restaurant/menu/${itemId}/toggle`);
       if (response.data.success) {
         toast.success('Item availability updated');
         fetchMenu();
