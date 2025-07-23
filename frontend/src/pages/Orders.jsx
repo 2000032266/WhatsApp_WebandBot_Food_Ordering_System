@@ -19,7 +19,7 @@ const Orders = () => {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const endpoint = user?.role === 'super_admin' ? '/admin/orders' : '/restaurant/orders';
+      const endpoint = user?.role === 'super_admin' ? '/api/admin/orders' : '/api/restaurant/orders';
       const params = filter !== 'all' ? { status: filter } : {};
       
       const response = await api.get(endpoint, { params });
