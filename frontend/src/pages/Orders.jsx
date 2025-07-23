@@ -48,8 +48,8 @@ const Orders = () => {
   const handleUpdateStatus = async (orderId, newStatus) => {
     try {
       const endpoint = user?.role === 'super_admin' 
-        ? `/admin/orders/${orderId}/status` 
-        : `/restaurant/orders/${orderId}/status`;
+        ? `/api/admin/orders/${orderId}/status` 
+        : `/api/restaurant/orders/${orderId}/status`;
       
       const response = await api.put(endpoint, { status: newStatus });
       
@@ -66,8 +66,8 @@ const Orders = () => {
   const handleUpdatePayment = async (orderId, newPaymentStatus) => {
     try {
       const endpoint = user?.role === 'super_admin' 
-        ? `/admin/orders/${orderId}/payment` 
-        : `/restaurant/orders/${orderId}/payment`;
+        ? `/api/admin/orders/${orderId}/payment` 
+        : `/api/restaurant/orders/${orderId}/payment`;
       
       const response = await api.put(endpoint, { paymentStatus: newPaymentStatus });
       
