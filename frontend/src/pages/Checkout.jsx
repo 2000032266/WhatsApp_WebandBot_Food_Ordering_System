@@ -56,7 +56,7 @@ const Checkout = () => {
         payment_method: 'COD' // Cash on Delivery
       };
       
-      const response = await api.post('/customer/orders', orderData);
+      const response = await api.post('/api/customer/orders', orderData);
       
       if (response.data.success) {
         // Clear cart from localStorage

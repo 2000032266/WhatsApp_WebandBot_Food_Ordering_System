@@ -26,7 +26,7 @@ const Restaurants = () => {
 
   const fetchRestaurants = async () => {
     try {
-      const response = await api.get('/admin/restaurants');
+      const response = await api.get('/api/admin/restaurants');
       if (response.data.success) {
         setRestaurants(response.data.data.restaurants);
       }
@@ -40,7 +40,7 @@ const Restaurants = () => {
 
   const fetchRestaurantOwners = async () => {
     try {
-      const response = await api.get('/admin/users', { params: { role: 'restaurant_owner' } });
+      const response = await api.get('/api/admin/users', { params: { role: 'restaurant_owner' } });
       if (response.data.success) {
         setUsers(response.data.data.users);
       }
@@ -60,7 +60,7 @@ const Restaurants = () => {
     try {
       const response = editingRestaurant 
         ? await api.put(`/admin/restaurants/${editingRestaurant.id}`, formData)
-        : await api.post('/admin/restaurants', formData);
+        : await api.post('/api/admin/restaurants', formData);
       
       if (response.data.success) {
         toast.success(`Restaurant ${editingRestaurant ? 'updated' : 'created'} successfully`);

@@ -25,7 +25,7 @@ const Users = () => {
   const fetchUsers = async () => {
     try {
       const params = filterRole !== 'all' ? { role: filterRole } : {};
-      const response = await api.get('/admin/users', { params });
+      const response = await api.get('/api/admin/users', { params });
       if (response.data.success) {
         setUsers(response.data.data.users);
       }
@@ -71,7 +71,7 @@ const Users = () => {
         }
       } else {
         // Create new user
-        response = await api.post('/admin/users', formData);
+        response = await api.post('/api/admin/users', formData);
         if (response.data.success) {
           toast.success('User created successfully');
           setShowForm(false);

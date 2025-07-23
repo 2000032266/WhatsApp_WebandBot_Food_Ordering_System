@@ -19,7 +19,7 @@ const MenuManagement = () => {
 
   const fetchMenu = async () => {
     try {
-      const response = await api.get('/restaurant/menu');
+      const response = await api.get('/api/restaurant/menu');
       if (response.data.success) {
         setMenuItems(response.data.data.menuItems);
         setCategories(response.data.data.categories);
@@ -34,7 +34,7 @@ const MenuManagement = () => {
 
   const handleCreateItem = async (itemData) => {
     try {
-      const response = await api.post('/restaurant/menu', itemData);
+      const response = await api.post('/api/restaurant/menu', itemData);
       if (response.data.success) {
         toast.success('Menu item created successfully');
         setShowForm(false);

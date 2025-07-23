@@ -36,7 +36,7 @@ const Dashboard = () => {
   const fetchDashboardData = async () => {
     try {
       setError(null);
-      const response = await api.get('/restaurant/dashboard');
+      const response = await api.get('/api/restaurant/dashboard');
       if (response.data.success) {
         setStats(response.data.data);
       }

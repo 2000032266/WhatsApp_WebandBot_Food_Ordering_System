@@ -26,7 +26,7 @@ const CustomerDashboard = () => {
 
       // Fetch customer's recent orders
       try {
-        const ordersResponse = await api.get('/customer/orders');
+        const ordersResponse = await api.get('/api/customer/orders');
         if (ordersResponse.data.success) {
           setRecentOrders(ordersResponse.data.data.orders || []);
         }
@@ -56,7 +56,7 @@ const CustomerDashboard = () => {
       }
 
       // Start WhatsApp ordering flow
-      const response = await api.post('/whatsapp/start-order', {
+      const response = await api.post('/api/whatsapp/start-order', {
         phone: userPhone
       });
 

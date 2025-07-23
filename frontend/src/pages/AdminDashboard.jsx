@@ -14,7 +14,7 @@ const AdminDashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await api.get('/admin/dashboard');
+      const response = await api.get('/api/admin/dashboard');
       if (response.data.success) {
         setStats(response.data.data);
       }

@@ -93,7 +93,7 @@ const Orders = () => {
         dateTo: undefined
       };
       
-      const response = await api.get('/restaurant/orders/download/csv', { 
+      const response = await api.get('/api/restaurant/orders/download/csv', { 
         params,
         responseType: 'blob', // Important for file download
         timeout: 30000 // 30 second timeout for large files

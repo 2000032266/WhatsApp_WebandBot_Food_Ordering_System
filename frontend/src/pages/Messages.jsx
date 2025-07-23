@@ -28,7 +28,7 @@ const Messages = () => {
       if (filters.dateTo) params.dateTo = filters.dateTo;
       if (filters.limit) params.limit = filters.limit;
 
-      const response = await api.get('/admin/messages', { params });
+      const response = await api.get('/api/admin/messages', { params });
       if (response.data.success) {
         setMessages(response.data.data.messages);
       }
