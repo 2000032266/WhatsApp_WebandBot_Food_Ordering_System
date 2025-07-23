@@ -24,6 +24,7 @@ const Orders = () => {
       
       const response = await api.get(endpoint, { params });
       if (response.data.success) {
+        console.log('Fetched orders:', response.data.data.orders);
         setOrders(response.data.data.orders);
       }
     } catch (error) {
