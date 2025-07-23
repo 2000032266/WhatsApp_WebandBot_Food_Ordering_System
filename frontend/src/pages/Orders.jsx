@@ -24,8 +24,11 @@ const Orders = () => {
       
       const response = await api.get(endpoint, { params });
       if (response.data.success) {
-        console.log('Fetched orders:', response.data.data.orders);
-        setOrders(response.data.data.orders);
+        let orders = response.data.data.orders || [];
+        // Ensure every order has an 'items' property (empty array if missing)
+        orders = orders.map(order => ({ ...order, items: Array.isArray(order.items) ? order.items : [] }));
+        console.log('Fetched orders:', orders);
+        setOrders(orders);
       }
     } catch (error) {
       toast.error('Failed to load orders');
