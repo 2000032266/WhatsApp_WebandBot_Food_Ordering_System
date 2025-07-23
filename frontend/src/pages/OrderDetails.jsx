@@ -17,7 +17,7 @@ const OrderDetails = () => {
   const fetchOrderDetails = async () => {
     try {
       setLoading(true);
-      const response = await api.get(`/customer/orders/${id}`);
+      const response = await api.get(`/api/customer/orders/${id}`);
       if (response.data.success) {
         setOrder(response.data.data);
       }

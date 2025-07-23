@@ -14,7 +14,7 @@ const NotificationCenter = () => {
     let intervalId;
     const fetchNotifications = async () => {
       try {
-        const response = await api.get('/notifications');
+        const response = await api.get('/api/notifications');
         if (response.data.success) {
           const notifs = (response.data.data || []).map(n => ({
             id: n.id,
