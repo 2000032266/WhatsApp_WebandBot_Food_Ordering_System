@@ -19,12 +19,12 @@ const RestaurantMenu = () => {
   const fetchRestaurantData = async () => {
     try {
       setLoading(true);
-      const restaurantResponse = await api.get(`/restaurants/${id}`);
+      const restaurantResponse = await api.get(`/api/restaurants/${id}`);
       if (restaurantResponse.data.success) {
         setRestaurant(restaurantResponse.data.data.restaurant);
         
         // Fetch menu items
-        const menuResponse = await api.get(`/restaurants/${id}/menu`);
+        const menuResponse = await api.get(`/api/restaurants/${id}/menu`);
         if (menuResponse.data.success) {
           // Group menu items by category
           const menuItems = menuResponse.data.data.menuItems;
