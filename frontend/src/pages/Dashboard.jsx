@@ -101,16 +101,15 @@ const Dashboard = () => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
       {/* WhatsApp QR Code for Owners */}
-      <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 border border-green-200 flex flex-col sm:flex-row items-center sm:space-x-6 mb-4">
+      <div className="bg-white rounded-lg shadow-md p-6 border border-green-200 flex flex-col md:flex-row items-center md:space-x-6 mb-4">
         <img
           src={require('../assets/whatsappqr.jpeg')}
           alt="WhatsApp QR Code"
-          className="w-28 h-28 sm:w-32 sm:h-32 object-contain rounded-lg border border-green-400 mb-3 sm:mb-0"
-          style={{ maxWidth: '100%', height: 'auto' }}
+          className="w-32 h-32 object-contain rounded-lg border border-green-400 mb-4 md:mb-0"
         />
-        <div className="text-center sm:text-left w-full sm:w-auto">
-          <h2 className="text-lg sm:text-xl font-bold text-green-700 mb-2">Join WhatsApp to Receive Notifications</h2>
-          <p className="text-gray-700 text-sm sm:text-base">Scan this QR code with WhatsApp to enable order and status notifications for your restaurant account.</p>
+        <div>
+          <h2 className="text-xl font-bold text-green-700 mb-2">Join WhatsApp to Receive Notifications</h2>
+          <p className="text-gray-700 text-base">Scan this QR code with WhatsApp to enable order and status notifications for your restaurant account.</p>
         </div>
       </div>
       {/* Header with animation */}
