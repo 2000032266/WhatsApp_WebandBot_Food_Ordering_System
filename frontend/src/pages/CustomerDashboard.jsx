@@ -125,6 +125,18 @@ const CustomerDashboard = () => {
 
   return (
     <div className="space-y-6">
+      {/* WhatsApp QR Code Section */}
+      <div className="bg-white rounded-lg shadow-md p-6 border border-green-200 flex flex-col md:flex-row items-center md:space-x-6 mb-4">
+        <img
+          src={require('../assets/whatsappqr.jpeg')}
+          alt="WhatsApp QR Code"
+          className="w-32 h-32 object-contain rounded-lg border border-green-400 mb-4 md:mb-0"
+        />
+        <div>
+          <h2 className="text-xl font-bold text-green-700 mb-2">Join here to Order food</h2>
+          <p className="text-gray-700 text-base">Scan this QR code with WhatsApp to start your food ordering journey instantly!</p>
+        </div>
+      </div>
       {/* Header */}
       <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to Food Ordering!</h1>
